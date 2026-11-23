@@ -13,12 +13,12 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded")
 
-alt.themes.enable("dark")
+alt.theme.enable("dark")
 
 
 #######################
 # Load data
-df_reshaped = pd.read_csv('us-population-2010-2019-reshaped.csv')
+df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
 
 
 #######################
@@ -194,10 +194,10 @@ with col[1]:
     st.markdown('#### Total Population')
     
     choropleth = make_choropleth(df_selected_year, 'states_code', 'population', selected_color_theme)
-    st.plotly_chart(choropleth, use_container_width=True)
+    st.plotly_chart(choropleth, width="stretch")
     
     heatmap = make_heatmap(df_reshaped, 'year', 'states', 'population', selected_color_theme)
-    st.altair_chart(heatmap, use_container_width=True)
+    st.altair_chart(heatmap, width="stretch")
     
 
 with col[2]:
@@ -206,7 +206,6 @@ with col[2]:
     st.dataframe(df_selected_year_sorted,
                  column_order=("states", "population"),
                  hide_index=True,
-                 width=None,
                  column_config={
                     "states": st.column_config.TextColumn(
                         "States",
