@@ -2,7 +2,7 @@
 
 An interactive Streamlit dashboard of US state populations from 2010 to 2019,
 built by following the [Data Professor](https://github.com/dataprofessor/population-dashboard)
-dashboard tutorial.
+dashboard tutorial during my M.S. in Analytics at Dakota State University (DSU).
 
 ## Features
 
